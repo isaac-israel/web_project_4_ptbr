@@ -1,0 +1,115 @@
+/* normaliza */
+@import url(../vendor/normalize.css);
+
+/* body */
+@import url(../blocks/body/body.css);
+
+/* title */
+@import url(../blocks/title/title.css);
+
+/* subtitle */
+@import url(../blocks/subtitle/subtitle.css);
+
+/* button */
+@import url(../blocks/button/button.css);
+
+/* edit-button */
+@import url(../blocks/edit-button/edit-button.css);
+
+/* logo */
+@import url(../blocks/logo/logo.css);
+
+/* header */
+@import url(../blocks/header/header.css);
+
+/* line */
+@import url(../blocks/line/line.css);
+
+/* profile */
+@import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/__titles/profile__titles.css);
+@import url(../blocks/profile/__title/profile__title.css);
+@import url(../blocks/profile/__subtitle/profile__subtitle.css);
+@import url(../blocks/profile/__container/profile__container.css);
+@import url(../blocks/profile/__content/profile__content.css);
+@import url(../blocks/profile/__image/profile__image.css);
+
+/* posts */
+@import url(../blocks/posts/posts.css);
+
+/* post */
+@import url(../blocks/post/post.css);
+@import url(../blocks/post/title/post__title.css);
+@import url(../blocks/post/__container/post__container.css);
+@import url(../blocks/post/__image/post__image.css);
+@import url(../blocks/post/__button/post__button.css);
+
+/* footer */
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/footer__title/footer__title.css);
+
+
+.popup{   
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: black;
+}
+
+.popup__closed{
+    display: none;
+}
+
+.popup::backdrop{
+    background: #000000;
+    opacity: 0.5;
+}
+
+.modal{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 2.25rem;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+.modal__title{
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form__input, .form__input:focus{
+    color: black;
+    padding: .8125rem 0;
+    width: 358px;
+    border-left-style: none;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: 1px solid #cccccc33 ;
+    outline: 0;
+}
+
+.modal__button{
+    padding: 16px 7.8125rem;
+    margin: 3rem 0 36px 0;
+}
+
+.button__text{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: white;
+}
+
+.button:hover{
+    opacity: 0.8;
+}
