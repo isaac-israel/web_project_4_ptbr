@@ -12,9 +12,8 @@
 
 /* button */
 @import url(../blocks/button/button.css);
-
-/* edit-button */
-@import url(../blocks/edit-button/edit-button.css);
+@import url(../blocks/button/__image/button__image.css);
+@import url(../blocks/button/__text/button__text.css);
 
 /* logo */
 @import url(../blocks/logo/logo.css);
@@ -33,6 +32,7 @@
 @import url(../blocks/profile/__container/profile__container.css);
 @import url(../blocks/profile/__content/profile__content.css);
 @import url(../blocks/profile/__image/profile__image.css);
+@import url(../blocks/profile/__button/profile__button.css);
 
 /* posts */
 @import url(../blocks/posts/posts.css);
@@ -48,68 +48,34 @@
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/footer__title/footer__title.css);
 
+/* fade */
+@import url(../blocks/fade/fade.css);
+@import url(../blocks/fade/_closed/fade_closed.css);
 
-.popup{   
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    background-color: black;
-}
+/* popup */
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/_closed/popup_closed.css);
+@import url(../blocks/popup/popup__close/popup__close.css);
+@import url(../blocks/popup/__icon/popup__icon.css);
 
-.popup__closed{
-    display: none;
-}
+/* modal */
+@import url(../blocks/modal/modal.css);
+@import url(../blocks/modal/__title/modal__title.css);
+@import url(../blocks/modal/__button/modal__button.css);
 
-.popup::backdrop{
-    background: #000000;
-    opacity: 0.5;
-}
+/* form */
+@import url(../blocks/form/form.css);
+@import url(../blocks/form/__input/form__input.css);
 
-.modal{
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    padding: 2.25rem;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-}
 
-.modal__title{
-    font-weight: 900;
-    font-size: 24px;
-    line-height: 29px;
-    color: #000000;
-}
 
-.form{
-    display: flex;
-    flex-direction: column;
-}
 
-.form__input, .form__input:focus{
-    color: black;
-    padding: .8125rem 0;
-    width: 358px;
-    border-left-style: none;
-    border-top-style: none;
-    border-right-style: none;
-    border-bottom-style: 1px solid #cccccc33 ;
-    outline: 0;
-}
 
-.modal__button{
-    padding: 16px 7.8125rem;
-    margin: 3rem 0 36px 0;
-}
 
-.button__text{
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    text-align: center;
-    color: white;
-}
 
-.button:hover{
-    opacity: 0.8;
-}
+
+
+
+
+
+

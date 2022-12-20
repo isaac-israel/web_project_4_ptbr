@@ -3,5 +3,8 @@
     padding: 0;
     border-radius: 10px;
     background-image: linear-gradient(black 0px calc(100% - 80px), white calc(100% - 120px) calc(100%));
-    max-height: 22.5625rem;
+    max-width: 17.625rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
