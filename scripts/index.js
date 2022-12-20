@@ -1,50 +1,50 @@
 // Modal
-let edit = document.querySelector(".profile__button");
-let closeButton = document.querySelector(".popup__close");
-let modal = document.querySelector(".popup");
-let fade = document.querySelector(".fade");
+const edit = document.querySelector(".profile__button");
+const closeButton = document.querySelector(".popup__close");
+const modal = document.querySelector(".popup");
+const fade = document.querySelector(".fade");
 
 
 
-function modalShow(){
-    modal.classList.remove('popup_closed');
-    fade.classList.remove('fade_closed');
+function modalShow() {
+  modal.classList.remove('popup_closed');
+  fade.classList.remove('fade_closed');
 }
 
-function modalClose(){
-    modal.classList.add('popup_closed');
-    fade.classList.add('fade_closed')
+function modalClose() {
+  modal.classList.add('popup_closed');
+  fade.classList.add('fade_closed')
 }
 
 edit.addEventListener('click', modalShow);
 closeButton.addEventListener('click', modalClose);
 
 // Form
-let form = document.querySelector(".form");
-function formSubmit(e){
-    e.preventDefault();
-    
-    let name = document.querySelector(".form__name");
-    let status = document.querySelector(".form__status");
+const form = document.querySelector(".form");
+function formSubmit(e) {
+  e.preventDefault();
 
-    let title = document.querySelector(".profile__title");
-    let subtitle = document.querySelector(".profile__subtitle");
+  const name = document.querySelector(".form__name");
+  const status = document.querySelector(".form__status");
 
-    title.textContent = name.value; 
-    subtitle.textContent = status.value;    
+  const title = document.querySelector(".profile__title");
+  const subtitle = document.querySelector(".profile__subtitle");
 
-    name.placeholder=title.textContent;
-    status.placeholder=subtitle.textContent;
+  title.textContent = name.value;
+  subtitle.textContent = status.value;
+
+  name.placeholder = title.textContent;
+  status.placeholder = subtitle.textContent;
 }
 
 form.addEventListener('submit', formSubmit);
 
 // Placeholder
-let name = document.querySelector(".form__name");
-let status = document.querySelector(".form__status");
-let title = document.querySelector(".profile__title");
-let subtitle = document.querySelector(".profile__subtitle");
+const name = document.querySelector(".form__name");
+const status = document.querySelector(".form__status");
+const title = document.querySelector(".profile__title");
+const subtitle = document.querySelector(".profile__subtitle");
 
-name.placeholder=title.textContent;
-status.placeholder=subtitle.textContent;
+name.placeholder = title.textContent;
+status.placeholder = subtitle.textContent;
 

@@ -1,11 +1,11 @@
-.modal__button{
-    padding: 16px 7.8125rem;
-    margin: 2rem 0 0 0;
-    background-color: black;
+.modal__button {
+  padding: 16px 7.8125rem;
+  margin: 2rem 0 0 0;
+  background-color: black;
 }
 
-@media screen and (min-width: 20rem)  and (max-width: 767px){
-    .modal__button{
-        padding: 14px 96px;
-    }
+@media screen and (min-width: 20rem) and (max-width: 767px) {
+  .modal__button {
+    padding: 14px 96px;
+  }
 }

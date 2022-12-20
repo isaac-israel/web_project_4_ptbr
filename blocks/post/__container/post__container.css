@@ -1,7 +1,7 @@
-.post__container{
-    display: flex;
-    justify-content: space-between;
-    min-height: 4.6875rem;
-    margin: 0;
-    padding: 0;
+.post__container {
+  display: flex;
+  justify-content: space-between;
+  min-height: 4.6875rem;
+  margin: 0;
+  padding: 0;
 }

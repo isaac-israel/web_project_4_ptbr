@@ -1,14 +1,15 @@
-.footer__title{
-    text-align: left;
-    font-size: 18px;
-    line-height: 22px;
-    color: #545454;
-    
+.footer__title {
+  text-align: left;
+  font-size: 18px;
+  line-height: 22px;
+  color: #545454;
+
 }
-@media screen and (min-width: 20rem)  and (max-width: 767px){
-    .footer__title{
-        display: flex;
-        width: 17.625rem;
-        justify-content: flex-start;
-    }
+
+@media screen and (min-width: 20rem) and (max-width: 767px) {
+  .footer__title {
+    display: flex;
+    width: 17.625rem;
+    justify-content: flex-start;
+  }
 }
