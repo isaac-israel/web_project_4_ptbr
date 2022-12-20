@@ -10,7 +10,7 @@
 
 **Github Pages**
 
-*[Link para o projeto no Github Pages](https://isaac-israel.github.io/web_project_4_ptbr/)
+* [Link para o projeto no Github Pages](https://isaac-israel.github.io/web_project_4_ptbr/)
 
 **Figma**
 
