@@ -7,3 +7,9 @@
     border-radius: 10px;
     max-width: 358px;
 }
+
+@media screen and (min-width: 20rem)  and (max-width: 767px){
+    .modal{
+        padding: 25px 22px;
+    }
+}

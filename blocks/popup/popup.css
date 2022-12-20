@@ -14,3 +14,9 @@
     background: #000000;
     opacity: 0.5;
 }
+
+@media screen and (min-width: 20rem)  and (max-width: 767px){
+    .popup{
+        width: 17.625rem;
+    }
+}

@@ -4,3 +4,13 @@
     line-height: 3rem;
     margin: 0 0 1rem 0;
 }
+
+@media screen and (min-width: 20rem)  and (max-width: 767px){
+    .profile__title{
+        min-width: 12.5rem;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 27px;
+        text-align: center;
+    }
+}

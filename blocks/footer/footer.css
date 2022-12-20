@@ -4,5 +4,21 @@
     padding: 4.25rem 0 3.75rem 0;
     align-items: center;
     justify-content: flex-start;
-    align-content: center;
+    align-content: flex-start;
+}
+
+@media screen and (min-width: 20rem)  and (max-width: 767px){
+    .footer{
+        padding: 20px 0 36px 0;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+}
+
+@media screen and (min-width: 48rem)  and (max-width: 63.9375rem){
+    .footer{
+        width: 100%;
+    }
 }

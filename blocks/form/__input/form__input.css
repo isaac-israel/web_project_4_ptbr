@@ -10,4 +10,10 @@
     color: black;
 }
 
+@media screen and (min-width: 20rem)  and (max-width: 767px){
+    .form__input{
+        width: 14.875rem;
+    }
+}
+
 

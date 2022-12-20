@@ -6,3 +6,9 @@
     justify-content: space-between;
     padding-bottom: 2.8891rem;
 }
+
+@media screen and (min-width: 20rem)  and (max-width: 767px){
+.profile{
+    flex-direction: column;
+}
+}

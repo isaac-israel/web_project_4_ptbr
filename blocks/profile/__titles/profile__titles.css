@@ -8,3 +8,10 @@
     flex-wrap: nowrap;
     align-content: space-between;
 }
+
+@media screen and (min-width: 20rem)  and (max-width: 767px){
+    .profile__titles{
+        margin-top: 1.625rem;
+        margin-bottom: 2.25rem;
+    }
+}
