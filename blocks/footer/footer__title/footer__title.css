@@ -9,7 +9,7 @@
 @media screen and (min-width: 20rem) and (max-width: 767px) {
   .footer__title {
     display: flex;
-    width: 17.625rem;
+    width: 88%;
     justify-content: flex-start;
   }
 }
