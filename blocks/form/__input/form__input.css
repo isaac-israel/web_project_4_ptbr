@@ -10,6 +10,7 @@
   background-color: transparent;
   outline: 0;
   color: black;
+  font-family: "Inter", Arial, sans-serif;
 }
 
 @media screen and (min-width: 20rem) and (max-width: 767px) {

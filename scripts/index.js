@@ -35,6 +35,8 @@ function formSubmit(e) {
 
   name.placeholder = title.textContent;
   status.placeholder = subtitle.textContent;
+
+  modalClose()
 }
 
 form.addEventListener('submit', formSubmit);
@@ -47,4 +49,8 @@ const subtitle = document.querySelector(".profile__subtitle");
 
 name.placeholder = title.textContent;
 status.placeholder = subtitle.textContent;
+
+// Troca de Ícone
+
+
 
