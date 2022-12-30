@@ -31,7 +31,7 @@
       <button class="button"><img class="add" alt="add" src="./images/add.png"></button>
     </section>
     <section class="posts">
-      <div class="post">
+      <!-- <div class="post">
         <img class="post__image" alt="Vale de Yosemite" src="./images/posts/1.jpg">
         <div class="post__container">
           <h2 class="title post__title">Vale de Yosemite</h2>
@@ -72,11 +72,11 @@
           <h2 class="title post__title">Lago di Braies</h2>
           <button class="button post__button"><img class="button__image" alt="like" src="./images/like.svg"></button>
         </div>
-      </div>
+      </div> -->
     </section>
   </main>
   <footer class="footer">
-    <h2 class="title footer__title">© 2023 Around The U.S.</h2>
+    <h2 class="title footer__title">&copy; 2023 Around The U.S.</h2>
   </footer>
   <div class="popup popup_closed">
     <button class="button popup__close"><img class="popup__icon" alt="close" src="./images/close.png"></button>
@@ -87,7 +87,19 @@
       <button class="button modal__button"><span class="button__text">Salvar</span></button>
     </form>
   </div>
+
   <div class="fade fade_closed"></div>
+
+  <template class="post__template">
+    <div class="post">
+      <div class="post__image"></div>
+      <div class="post__container">
+        <h2 class="title post__title"></h2>
+        <button class="button post__button"><img class="button__image" alt="like"></button>
+      </div>
+    </div>
+  </template>
+
   <script src="./scripts/index.js"></script>
 </body>
 

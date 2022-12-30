@@ -50,7 +50,43 @@ const subtitle = document.querySelector(".profile__subtitle");
 name.placeholder = title.textContent;
 status.placeholder = subtitle.textContent;
 
-// Troca de Ícone
+// Coloca post
+
+const posts = document.querySelector('.posts');
+const postTemplate = document.querySelector('.post__template').content;
+const postElement = postTemplate.querySelector('.post').cloneNode(true);
+const initialCards = [
+  {
+    name: "Vale de Yosemite",
+    link: "https://code.s3.yandex.net/web-code/yosemite.jpg"
+  },
+  {
+    name: "Lago Louise",
+    link: "https://code.s3.yandex.net/web-code/lake-louise.jpg"
+  },
+  {
+    name: "Montanhas Carecas",
+    link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg"
+  },
+  {
+    name: "Latemar",
+    link: "https://code.s3.yandex.net/web-code/latemar.jpg"
+  },
+  {
+    name: "Parque Nacional da Vanoise ",
+    link: "https://code.s3.yandex.net/web-code/vanoise.jpg"
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://code.s3.yandex.net/web-code/lago.jpg"
+  }
+];
 
 
+
+initialCards.forEach((item)=>{
+  postElement.querySelector('.post__title').textContent=item.name;
+  postElement.querySelector('.post__image').style.backgroundImage=`url(${item.link})`;
+  posts.appendChild(postElement);
+});
 

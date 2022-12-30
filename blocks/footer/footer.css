@@ -1,6 +1,6 @@
 .footer {
   display: flex;
-  width: 55.5625rem;
+  min-width: 48rem;
   padding: 4.25rem 0 3.75rem 0;
   align-items: center;
   justify-content: flex-start;
@@ -14,6 +14,7 @@
     display: flex;
     justify-content: center;
     align-content: center;
+    min-width: auto;
   }
 }
 
