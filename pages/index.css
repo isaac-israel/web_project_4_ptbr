@@ -42,6 +42,7 @@
 
 /* post */
 @import url(../blocks/post/post.css);
+@import url(../blocks/post/__image/post__image.css);
 @import url(../blocks/post/title/post__title.css);
 @import url(../blocks/post/__container/post__container.css);
 @import url(../blocks/post/__button/post__button.css);
@@ -68,14 +69,8 @@
 /* form */
 @import url(../blocks/form/form.css);
 @import url(../blocks/form/__input/form__input.css);
+@import url(../blocks/form/__input/_add/form__input_add.css);
 
-.post__image{
-  width: auto;
-  height: 17.625rem;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
 
 
 

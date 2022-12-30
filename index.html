@@ -28,7 +28,7 @@
           <h2 class="subtitle profile__subtitle">Explorar</h2>
         </div>
       </div>
-      <button class="button"><img class="add" alt="add" src="./images/add.png"></button>
+      <button class="button button__add"><img class="add" alt="add" src="./images/add.png"></button>
     </section>
     <section class="posts">
       <!-- <div class="post">
@@ -78,17 +78,6 @@
   <footer class="footer">
     <h2 class="title footer__title">&copy; 2023 Around The U.S.</h2>
   </footer>
-  <div class="popup popup_closed">
-    <button class="button popup__close"><img class="popup__icon" alt="close" src="./images/close.png"></button>
-    <form class="form modal">
-      <h2 class="title modal__title">Editar perfil</h2>
-      <input class="form__input form__name" name="name" id="name" type="text" placeholder="">
-      <input class="form__input form__status" name="status" id="status" type="text" placeholder="">
-      <button class="button modal__button"><span class="button__text">Salvar</span></button>
-    </form>
-  </div>
-
-  <div class="fade fade_closed"></div>
 
   <template class="post__template">
     <div class="post">
@@ -99,6 +88,28 @@
       </div>
     </div>
   </template>
+
+  <div class="popup popup_closed edit__modal">
+    <button class="edit__close button popup__close"><img class="popup__icon" alt="close" src="./images/close.png"></button>
+      <form class="form modal">
+        <h2 class="title modal__title">Editar perfil</h2>
+        <input class="form__input form__name" name="name" id="name" type="text" placeholder="">
+        <input class="form__input form__status" name="status" id="status" type="text" placeholder="">
+        <button class="button modal__button"><span class="button__text">Salvar</span></button>
+      </form>
+  </div>
+
+  <div class="popup popup_closed add__modal">
+    <button class="add__close button popup__close"><img class="popup__icon" alt="close" src="./images/close.png"></button>
+      <form class="form modal form__add">
+        <h2 class="title modal__title">Novo local</h2>
+        <input class="form__input form__input_add form__title" type="text" placeholder="Título">
+        <input class="form__input form__input_add form__link" type="text" placeholder="Link de imagem">
+        <button class="button modal__button"><span class="button__text">Criar</span></button>
+      </form>
+  </div>
+
+  <div class="fade fade_closed"></div>
 
   <script src="./scripts/index.js"></script>
 </body>
