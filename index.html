@@ -81,10 +81,12 @@
 
   <template class="post__template">
     <div class="post">
-      <div class="post__image"></div>
+      <div class="post__image">
+        <button class="button post__delete"><img class="" alt="delete post" src="./images/trash.svg" ></button>
+      </div>
       <div class="post__container">
         <h2 class="title post__title"></h2>
-        <button class="button post__button"><img class="button__image" alt="like"></button>
+        <button class="button post__button"><img class="button__image" alt="like" src="./images/like.svg"></button>
       </div>
     </div>
   </template>
@@ -107,6 +109,11 @@
         <input class="form__input form__input_add form__link" type="text" placeholder="Link de imagem">
         <button class="button modal__button"><span class="button__text">Criar</span></button>
       </form>
+  </div>
+
+  <div class="popup popup_closed image__modal">
+    <button class="add__close button popup__close"><img class="popup__icon" alt="close" src="./images/close.png"></button>
+    <div><img class="modal__image" alt="" src=""></div>
   </div>
 
   <div class="fade fade_closed"></div>

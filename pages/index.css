@@ -72,6 +72,10 @@
 @import url(../blocks/form/__input/_add/form__input_add.css);
 
 
+.post__delete{
+  margin: 1.125rem;
+}
+
 
 
 

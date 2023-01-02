@@ -1,6 +1,11 @@
 .post__image{
-  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: baseline;
+  width: 100%;
   height: 17.625rem;
   background-repeat: no-repeat;
   background-size: cover;
+  cursor: pointer;
 }
