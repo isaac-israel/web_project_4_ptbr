@@ -14,7 +14,10 @@
 }
 
 @media screen and (min-width: 20rem) and (max-width: 767px) {
-  .form__input {
+
+  .form__input,
+  .form__input:focus,
+  .form__input::placeholder {
     width: 14.875rem;
   }
 }
