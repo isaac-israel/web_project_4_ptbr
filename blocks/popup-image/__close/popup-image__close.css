@@ -1,14 +1,12 @@
 .popup-image__close {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  align-content: flex-start;
   flex-direction: column;
   margin-bottom: 10px;
 }
 
 @media screen and (min-width: 320px) and (max-width: 48rem){
   .popup-image__close{
-    margin-bottom: 0;
+    max-width: 75vw;
+
   }
 }

@@ -15,6 +15,6 @@
     display: flex;
     flex-direction: column;
     align-self: center;
-    min-width: 17.625rem;
+    width: 88%;
   }
 }

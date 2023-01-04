@@ -6,9 +6,3 @@
   justify-content: flex-start;
   align-content: flex-start;
 }
-
-@media screen and (min-width: 20rem) and (max-width: 768px) {
-  .footer {
-    margin-left: 1.25rem;
-  }
-}

@@ -4,7 +4,7 @@
 
 @media screen and (min-width: 320px) and (max-width: 48rem){
   .popup__image{
-    max-height: auto;
-    width: 15rem;
+    max-height: 75vh;
+    max-width: 75vw;
   }
 }
