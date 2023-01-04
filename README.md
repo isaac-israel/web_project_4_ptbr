@@ -18,11 +18,11 @@
 
 **Imagens**
 
-A maneira como você fará isso no trabalho é exportando imagens diretamente do Figma — recomendamos fazer isso para praticar mais. Não se esqueça de otimizá-los [aqui](https://tinypng.com/), para que seu projeto carregue mais rápido.
+Imagens essenciais para o projeto estão salvas no projeto
 
 **HTML**
 
-Corpo do projeto.
+Corpo do projeto e o modelo para os popups
 
 **CSS**
 
@@ -30,10 +30,24 @@ Estilização do projeto.
 
 **JS**
 
-Para pleno funcionamento dos modais e envio de dados do formulário para tags correspondentes.
+Para pleno funcionamento dos modais e envio de dados do formulário para tags correspondentes, inserção de posts, likes e envio de imagens.
 
 **Outras tecnologias**
 
 .editorconfig para indentação e .nojekyll para funcionamento do github pages
 
-Divirta-se com JavaScript!
+**Funcionalidades**
+
+* Editar nome 
+* Editar status
+* Adicionar post
+* Inserir imagem do post
+* Inserir nome do post
+* Dar like no post
+* Ampliar o post
+
+**Objetivo**
+
+Demonstrar aptidão com as tecnologias envolvidas
+
+
