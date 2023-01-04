@@ -54,32 +54,26 @@ const initialCards = [
   {
     name: "Vale de Yosemite",
     link: "https://code.s3.yandex.net/web-code/yosemite.jpg",
-    likes: 0
   },
   {
     name: "Lago Louise",
     link: "https://code.s3.yandex.net/web-code/lake-louise.jpg",
-    likes: 0
   },
   {
     name: "Montanhas Carecas",
     link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg",
-    likes: 0
   },
   {
     name: "Latemar",
     link: "https://code.s3.yandex.net/web-code/latemar.jpg",
-    likes: 0
   },
   {
     name: "Parque Nacional da Vanoise ",
     link: "https://code.s3.yandex.net/web-code/vanoise.jpg",
-    likes: 0
   },
   {
     name: "Lago di Braies",
     link: "https://code.s3.yandex.net/web-code/lago.jpg",
-    likes: 0
   }
 ];
 
@@ -127,7 +121,6 @@ function formAddSubmit(e) {
     {
       name: `${addTitle}`,
       link: `${addLink}`,
-      likes: 0
     }
   ];
 
@@ -164,19 +157,20 @@ like.forEach((element) => {
 });
 
 // Delete Post
-const deletePost = document.querySelectorAll('.post__delete');
+const deletePost = document.querySelectorAll('.posts');
 
 deletePost.forEach((element) => {
   function delPost(e) {
-    e.stopPropagation()
-    e.target.parentElement.parentElement.parentElement.remove();
+    if(e.target.classList.contains('post__delete__image')){
+      e.target.parentElement.parentElement.parentElement.remove();
+    }
   }
-  element.addEventListener('click', delPost, { capture: true });
+  element.addEventListener('click', delPost);
 });
 
 // Popup Image
 const imageModal = document.querySelector('#image__modal');
-const postImage = document.querySelectorAll('.post__image');
+const postImage = document.querySelectorAll('.posts');
 const imageClose = document.querySelector('#image__close');
 const modalImage = document.querySelector('#modal__image');
 const modalDescription = document.querySelector('#modal__description');
@@ -184,34 +178,33 @@ const modalDescription = document.querySelector('#modal__description');
 
 postImage.forEach((element) => {
   function popupImage(e) {
-    popupImageOpen();
-    const postTitle = document.querySelector('.post__title').textContent;
-    modalDescription.textContent = postTitle;
-    const image = e.target.style.backgroundImage;
-    const imageAux = image.slice(5, image.length - 2);
-    modalImage.src = `${imageAux}`;
-    modalImage.setAttribute('alt', postTitle);
-    imageWidth();
+    if(e.target.classList.contains('post__image')){
+      popupImageOpen();
+      const postTitle = document.querySelector('.post__title').textContent;
+      modalDescription.textContent = postTitle;
+      const image = e.target.style.backgroundImage;
+      const imageAux = image.slice(5, image.length - 2);
+      modalImage.src = `${imageAux}`;
+      modalImage.setAttribute('alt', postTitle);
+      imageWidth();
+    }
   }
   element.addEventListener('click', popupImage);
 });
 
 imageClose.addEventListener('click', popupImageClose);
 
-// Calcula a largura da imagem
 function imageWidth() {
   const buttonImage = document.querySelector('#image__modal_close');
   const imageWidth = modalImage.clientWidth;
   buttonImage.style.width = `${imageWidth + 80}px`;
 }
 
-// Fecha o popup da imagem
 function popupImageClose() {
   imageModal.classList.add('popup_closed');
   fade.classList.add('fade_closed');
 }
 
-// Abre o popup da imagem
 function popupImageOpen() {
   imageModal.classList.remove('popup_closed');
   fade.classList.remove('fade_closed');
