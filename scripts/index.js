@@ -153,11 +153,12 @@ function formAddSubmit(e) {
 formAdd.addEventListener('submit', formAddSubmit);
 
 // Evento clique no Like
-const like = document.querySelectorAll('.button__image');
+const like = document.querySelectorAll('.posts');
 
 like.forEach((element) => {
   function getLike(e) {
-    e.target.classList.toggle('post__button_active');
+    if(e.target.classList.contains('button__image'))
+      e.target.classList.toggle('post__button_active');
   }
   element.addEventListener('click', getLike);
 });
