@@ -4,14 +4,14 @@ const closeButton = document.querySelector("#edit__close");
 const modal = document.querySelector("#edit__modal");
 const fade = document.querySelector(".fade");
 
-function modalShow() {
+function modalShow() { //O formulário já vem preenchido, só que no placeholder, facilita a vida em não precisar apagar tudo quando for fazer qualquer alteração, com um clique resolve
   modal.classList.remove('popup_closed');
   fade.classList.remove('fade_closed');
 }
 
 function modalClose() {
   modal.classList.add('popup_closed');
-  fade.classList.add('fade_closed')
+  fade.classList.add('fade_closed');
 }
 
 edit.addEventListener('click', modalShow);
@@ -22,15 +22,15 @@ const form = document.querySelector(".form");
 function formSubmit(e) {
   e.preventDefault();
 
-  const name = document.querySelector(".form__name");
-  const status = document.querySelector(".form__status");
+  const formName = document.querySelector(".form__name");
+  const formStatus = document.querySelector(".form__status");
   const title = document.querySelector(".profile__title");
   const subtitle = document.querySelector(".profile__subtitle");
 
-  title.textContent = name.value;
-  subtitle.textContent = status.value;
-  name.placeholder = title.textContent;
-  status.placeholder = subtitle.textContent;
+  title.textContent = formName.value;
+  subtitle.textContent = formStatus.value;
+  formName.placeholder = title.textContent;
+  formStatus.placeholder = subtitle.textContent;
 
   document.querySelector(".form__name").value = '';
   document.querySelector(".form__status").value = '';
@@ -41,13 +41,13 @@ function formSubmit(e) {
 form.addEventListener('submit', formSubmit);
 
 // Placeholder do modal edit
-const name = document.querySelector(".form__name");
-const status = document.querySelector(".form__status");
+const formName = document.querySelector(".form__name");
+const formStatus = document.querySelector(".form__status");
 const title = document.querySelector(".profile__title");
 const subtitle = document.querySelector(".profile__subtitle");
 
-name.placeholder = title.textContent;
-status.placeholder = subtitle.textContent;
+formName.placeholder = title.textContent;
+formStatus.placeholder = subtitle.textContent;
 
 // Posta os arrays salvos
 const initialCards = [
