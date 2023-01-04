@@ -4,8 +4,6 @@ const closeButton = document.querySelector("#edit__close");
 const modal = document.querySelector("#edit__modal");
 const fade = document.querySelector(".fade");
 
-//Eu vou fazer a alteração do placeholder porque você pediu, mas para mim, nitidamente deixar a informação salva no placeholder para que o usuário não tenha trabalho em apagar é muito mais comodo do que deixar um texto escrito
-
 function modalShow() {
   modal.classList.remove('popup_closed');
   fade.classList.remove('fade_closed');
@@ -115,7 +113,6 @@ function formAddSubmit(e) {
   e.preventDefault();
   const addTitle = document.querySelector('.form__title').value;
   const addLink = document.querySelector('.form__link').value;
-
   const arrayAux = [
     {
       name: `${addTitle}`,
