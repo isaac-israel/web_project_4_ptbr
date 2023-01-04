@@ -1,7 +1,7 @@
 // Modal edit
 const edit = document.querySelector(".profile__button");
-const closeButton = document.querySelector(".edit__close");
-const modal = document.querySelector(".edit__modal");
+const closeButton = document.querySelector("#edit__close");
+const modal = document.querySelector("#edit__modal");
 const fade = document.querySelector(".fade");
 
 function modalShow() {
@@ -24,15 +24,16 @@ function formSubmit(e) {
 
   const name = document.querySelector(".form__name");
   const status = document.querySelector(".form__status");
-
   const title = document.querySelector(".profile__title");
   const subtitle = document.querySelector(".profile__subtitle");
 
   title.textContent = name.value;
   subtitle.textContent = status.value;
-
   name.placeholder = title.textContent;
   status.placeholder = subtitle.textContent;
+
+  document.querySelector(".form__name").value = '';
+  document.querySelector(".form__status").value = '';
 
   modalClose()
 }
@@ -48,7 +49,7 @@ const subtitle = document.querySelector(".profile__subtitle");
 name.placeholder = title.textContent;
 status.placeholder = subtitle.textContent;
 
-// Coloca post
+// Posta os arrays salvos
 const initialCards = [
   {
     name: "Vale de Yosemite",
@@ -82,14 +83,13 @@ const initialCards = [
   }
 ];
 
-
-initialCards.forEach((item)=>{
+initialCards.forEach((item) => {
   putPost(item);
 });
 
 function putPost(item) {
   const posts = document.querySelector('.posts');
-  const postTemplate = document.querySelector('.post__template').content;
+  const postTemplate = document.querySelector('#post__template').content;
   const postElement = postTemplate.querySelector('.post').cloneNode(true);
 
   postElement.querySelector('.post__title').textContent = item.name;
@@ -98,16 +98,16 @@ function putPost(item) {
 }
 
 // Abre e fecha o modal de adicionar post
-const buttonAdd = document.querySelector('.button__add');
-const modalAdd = document.querySelector('.add__modal');
-const addClose = document.querySelector('.add__close');
+const buttonAdd = document.querySelector('#button__add');
+const modalAdd = document.querySelector('#add__modal');
+const addClose = document.querySelector('#add__close');
 
-function addPost(){
+function addPost() {
   modalAdd.classList.remove('popup_closed');
   fade.classList.remove('fade_closed');
 }
 
-function closePost(){
+function closePost() {
   modalAdd.classList.add('popup_closed');
   fade.classList.add('fade_closed');
 }
@@ -116,21 +116,17 @@ buttonAdd.addEventListener('click', addPost);
 addClose.addEventListener('click', closePost);
 
 // Form do modal de adicionar post
-const formAdd = document.querySelector('.form__add');
+const formAdd = document.querySelector('#form__add');
 
-function formAddSubmit(e){
+function formAddSubmit(e) {
   e.preventDefault();
+  const addTitle = document.querySelector('.form__title').value;
+  const addLink = document.querySelector('.form__link').value;
 
-  const addTitle = document.querySelector('.form__title');
-  const addLink = document.querySelector('.form__link');
-  const addTitleValue = addTitle.value;
-  const addLinkValue = addLink.value;
-  console.log(addTitle)
-
-  const arrayAux=[
+  const arrayAux = [
     {
-      name: `${addTitleValue}`,
-      link: `${addLinkValue}`,
+      name: `${addTitle}`,
+      link: `${addLink}`,
       likes: 0
     }
   ];
@@ -138,12 +134,18 @@ function formAddSubmit(e){
   initialCards.push(arrayAux);
 
   const posts = document.querySelector('.posts');
-  const postTemplate = document.querySelector('.post__template').content;
+  const postTemplate = document.querySelector('#post__template').content;
   const postElement = postTemplate.querySelector('.post').cloneNode(true);
 
-  postElement.querySelector('.post__title').textContent=addTitleValue;
-  postElement.querySelector('.post__image').style.backgroundImage=`url(${addLinkValue})`;
+  postElement.querySelector('.post__title').textContent = addTitle;
+  postElement.querySelector('.post__image').style.backgroundImage = `url(${addLink})`;
   posts.appendChild(postElement);
+
+  addTitle.value = 'batata';
+  addTitle.textContent = 'morango';
+
+  document.querySelector('.form__title').value = '';
+  document.querySelector('.form__link').value = '';
 
   closePost();
 }
@@ -151,60 +153,65 @@ function formAddSubmit(e){
 formAdd.addEventListener('submit', formAddSubmit);
 
 // Evento clique no Like
-
 const like = document.querySelectorAll('.button__image');
-let aux = 0;
 
-like.forEach((element)=>{
-  function getLike(e){
-    manageLikes();
-    e.target.classList.toggle('.post__button_active');
-    addLike(e);
+like.forEach((element) => {
+  function getLike(e) {
+    e.target.classList.toggle('post__button_active');
   }
-
   element.addEventListener('click', getLike);
 });
-
-//Gerencia Likes
-function manageLikes() {
-  aux += 1;
-  aux === 1 ? (addLike(), aux += 1) : (removeLike(), aux -= 3);
-}
-
-//Adiciona Likes no array
-function addLike(e) {
-  initialCards.forEach((item) => {
-    if (e === item)
-      item.likes += 1;
-  });
-}
-
-//Remove Likes do array
-function removeLike(e){
-  initialCards.forEach((item) => {
-    if (e === item)
-      item.likes -= 1;
-  });
-}
 
 // Delete Post
 const deletePost = document.querySelectorAll('.post__delete');
 
-deletePost.forEach((element)=>{
-  function delPost(e){
+deletePost.forEach((element) => {
+  function delPost(e) {
+    e.stopPropagation()
     e.target.parentElement.parentElement.parentElement.remove();
   }
-
-  element.addEventListener('click', delPost);
+  element.addEventListener('click', delPost, { capture: true });
 });
 
 // Popup Image
+const imageModal = document.querySelector('#image__modal');
 const postImage = document.querySelectorAll('.post__image');
-const imageModal = document.querySelector('.image__modal');
+const imageClose = document.querySelector('#image__close');
+const modalImage = document.querySelector('#modal__image');
+const modalDescription = document.querySelector('#modal__description');
 
-postImage.forEach((element)=>{
-  function popupImageOpen(e){
+
+postImage.forEach((element) => {
+  function popupImage(e) {
+    popupImageOpen();
+    const postTitle = document.querySelector('.post__title').textContent;
+    modalDescription.textContent = postTitle;
+    const image = e.target.style.backgroundImage;
+    const imageAux = image.slice(5, image.length - 2);
+    modalImage.src = `${imageAux}`;
+    modalImage.setAttribute('alt', postTitle);
+    imageWidth();
   }
-
-  element.addEventListener('click', popupImage());
+  element.addEventListener('click', popupImage);
 });
+
+imageClose.addEventListener('click', popupImageClose);
+
+// Calcula a largura da imagem
+function imageWidth() {
+  const buttonImage = document.querySelector('#image__modal_close');
+  const imageWidth = modalImage.clientWidth;
+  buttonImage.style.width = `${imageWidth + 80}px`;
+}
+
+// Fecha o popup da imagem
+function popupImageClose() {
+  imageModal.classList.add('popup_closed');
+  fade.classList.add('fade_closed');
+}
+
+// Abre o popup da imagem
+function popupImageOpen() {
+  imageModal.classList.remove('popup_closed');
+  fade.classList.remove('fade_closed');
+}
