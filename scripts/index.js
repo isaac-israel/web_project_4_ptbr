@@ -175,18 +175,17 @@ const imageClose = document.querySelector('#image__close');
 const modalImage = document.querySelector('#modal__image');
 const modalDescription = document.querySelector('#modal__description');
 
-
 postImage.forEach((element) => {
   function popupImage(e) {
-    if(e.target.classList.contains('post__image')){
-      popupImageOpen();
-      const postTitle = document.querySelector('.post__title').textContent;
-      modalDescription.textContent = postTitle;
-      const image = e.target.style.backgroundImage;
-      const imageAux = image.slice(5, image.length - 2);
-      modalImage.src = `${imageAux}`;
-      modalImage.setAttribute('alt', postTitle);
-      imageWidth();
+      if(e.target.classList.contains('post__image')){
+        popupImageOpen();
+        const image = e.target.style.backgroundImage;
+        const imageAux = image.slice(5, image.length - 2);
+        modalImage.src = `${imageAux}`;
+        const postTitle = e.target.nextElementSibling.firstElementChild.textContent;
+        modalDescription.textContent=postTitle;
+        modalImage.setAttribute('alt', postTitle);
+        imageWidth();
     }
   }
   element.addEventListener('click', popupImage);
