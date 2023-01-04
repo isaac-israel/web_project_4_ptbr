@@ -132,7 +132,7 @@ function formAddSubmit(e) {
 
   postElement.querySelector('.post__title').textContent = addTitle;
   postElement.querySelector('.post__image').style.backgroundImage = `url(${addLink})`;
-  posts.appendChild(postElement);
+  posts.insertBefore(postElement, posts.firstElementChild);
 
   addTitle.value = 'batata';
   addTitle.textContent = 'morango';
@@ -150,7 +150,7 @@ const like = document.querySelectorAll('.posts');
 
 like.forEach((element) => {
   function getLike(e) {
-    if(e.target.classList.contains('button__image'))
+    if (e.target.classList.contains('button__image'))
       e.target.classList.toggle('post__button_active');
   }
   element.addEventListener('click', getLike);
@@ -161,7 +161,7 @@ const deletePost = document.querySelectorAll('.posts');
 
 deletePost.forEach((element) => {
   function delPost(e) {
-    if(e.target.classList.contains('post__delete__image')){
+    if (e.target.classList.contains('post__delete__image')) {
       e.target.parentElement.parentElement.parentElement.remove();
     }
   }
@@ -177,15 +177,15 @@ const modalDescription = document.querySelector('#modal__description');
 
 postImage.forEach((element) => {
   function popupImage(e) {
-      if(e.target.classList.contains('post__image')){
-        popupImageOpen();
-        const image = e.target.style.backgroundImage;
-        const imageAux = image.slice(5, image.length - 2);
-        modalImage.src = `${imageAux}`;
-        const postTitle = e.target.nextElementSibling.firstElementChild.textContent;
-        modalDescription.textContent=postTitle;
-        modalImage.setAttribute('alt', postTitle);
-        imageWidth();
+    if (e.target.classList.contains('post__image')) {
+      popupImageOpen();
+      const image = e.target.style.backgroundImage;
+      const imageAux = image.slice(5, image.length - 2);
+      modalImage.src = `${imageAux}`;
+      const postTitle = e.target.nextElementSibling.firstElementChild.textContent;
+      modalDescription.textContent = postTitle;
+      modalImage.setAttribute('alt', postTitle);
+      imageWidth();
     }
   }
   element.addEventListener('click', popupImage);
