@@ -4,7 +4,9 @@ const closeButton = document.querySelector("#edit__close");
 const modal = document.querySelector("#edit__modal");
 const fade = document.querySelector(".fade");
 
-function modalShow() { //O formulário já vem preenchido, só que no placeholder, facilita a vida em não precisar apagar tudo quando for fazer qualquer alteração, com um clique resolve
+//Eu vou fazer a alteração do placeholder porque você pediu, mas para mim, nitidamente deixar a informação salva no placeholder para que o usuário não tenha trabalho em apagar é muito mais comodo do que deixar um texto escrito
+
+function modalShow() {
   modal.classList.remove('popup_closed');
   fade.classList.remove('fade_closed');
 }
@@ -29,11 +31,8 @@ function formSubmit(e) {
 
   title.textContent = formName.value;
   subtitle.textContent = formStatus.value;
-  formName.placeholder = title.textContent;
-  formStatus.placeholder = subtitle.textContent;
-
-  document.querySelector(".form__name").value = '';
-  document.querySelector(".form__status").value = '';
+  formName.value = title.textContent;
+  formStatus.value = subtitle.textContent;
 
   modalClose()
 }
@@ -46,8 +45,8 @@ const formStatus = document.querySelector(".form__status");
 const title = document.querySelector(".profile__title");
 const subtitle = document.querySelector(".profile__subtitle");
 
-formName.placeholder = title.textContent;
-formStatus.placeholder = subtitle.textContent;
+formName.value = title.textContent;
+formStatus.value = subtitle.textContent;
 
 // Posta os arrays salvos
 const initialCards = [
