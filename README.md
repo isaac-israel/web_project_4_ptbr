@@ -30,7 +30,7 @@ Estilização do projeto.
 
 **JS**
 
-Para pleno funcionamento dos modais e envio de dados do formulário para tags correspondentes, inserção de posts, likes e envio de imagens.
+Para pleno funcionamento dos modais e envio de dados do formulário para tags correspondentes, inserção de posts, likes, envio de imagens, funcionalidades que fogem do do escopo do HTML e CSS
 
 **Outras tecnologias**
 
